@@ -2,17 +2,16 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Key Features
 
-- Dynamic loading of application
-- Session handling
-- Simple Routing using React Enroute
-- Redux state management
-- Simple server side rendering (React-snap) and SEO tag management (React-helmet)
-- Redux Saga for side effect management
-- Minimalist theme for MUI
-- Simple language management, designed to be compatible and easily swappable with i18next
+- Dynamic loading of application and code splitting
+- Apollo Client for handling graphql endpoints
+- `apollo-cache-inmemory` to manage application state
+- Routing using `react-router-dom`
+- Pre-rendering `react-snap` and SEO tag management `react-helmet`
+- Theming for MUI
 - Logger / analytics service
 - In memory Localstorage fallback
-- ScourJs as a immutability helper (optional)
+- `react-final-form` to handle form submissions and reactive forms
+- `scourjs` as immutability tool (optional)
 
 https://auth0.com/docs/universal-login
 https://trellis.auth0.com/authorize?response_type=token&client_id=e8Sk7ToG3y7fJMpNN006iVhEU1W2yONN&redirect_uri=http://localhost:3000/auth/callback&state=STATE
