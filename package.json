@@ -1,0 +1,64 @@
+{
+  "name": "web-app",
+  "version": "0.1.0",
+  "private": true,
+  "author": "Thomas Zhou",
+  "dependencies": {
+    "@apollo/react-hooks": "^3.1.3",
+    "@material-ui/core": "^4.7.0",
+    "@material-ui/icons": "^4.5.0",
+    "@types/history": "^4.7.2",
+    "@types/jest": "^24.0.17",
+    "@types/node": "^12.7.2",
+    "@types/qs": "^6.5.3",
+    "@types/react": "^16.9.1",
+    "@types/react-dom": "^16.8.5",
+    "apollo-boost": "^0.4.4",
+    "array-move": "^2.2.1",
+    "classnames": "^2.2.6",
+    "graphql": "^14.5.8",
+    "history": "^4.7.2",
+    "i18next": "^19.0.2",
+    "lodash.pickby": "^4.6.0",
+    "prop-types": "^15.7.0",
+    "qs": "^6.6.0",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-helmet": "^5.2.1",
+    "react-i18next": "^11.2.6",
+    "react-router-dom": "^5.1.2",
+    "react-scripts": "^3.3.0",
+    "react-sortable-hoc": "^1.10.1",
+    "typescript": "^3.7.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "postbuild": "react-snap",
+    "test": "react-scripts test",
+    "format": "prettier --write '**/*.js'",
+    "storybook": "start-storybook",
+    "storybook-build": "build-storybook -c .storybook -o .out",
+    "analyze": "npm run build; npx source-map-explorer build/static/js/*.js",
+    "index": "create-index ./src/constants ./src/models ./src/services ./src/utils ./src/graphql"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "devDependencies": {
+    "@storybook/addon-docs": "^5.2.8",
+    "@storybook/react": "^5.2.8",
+    "create-index": "^2.5.0",
+    "prettier": "^1.15.0",
+    "react-snap": "^1.23.0"
+  },
+  "reactSnap": {
+    "skipThirdPartyRequests": true
+  }
+}
