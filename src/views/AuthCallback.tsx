@@ -1,6 +1,5 @@
 import { useEffect } from 'react'
 // import auth from '../services/auth'
-// import router from '../utils/router'
 
 export default function AuthCallbackHandler() {
   useEffect(() => {

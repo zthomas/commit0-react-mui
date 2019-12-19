@@ -30,7 +30,7 @@ const fontFamily =
 
 const defaultTheme = createMuiTheme({
   typography: {
-    useNextVariants: true,
+    // useNextVariants: true,
   },
 })
 

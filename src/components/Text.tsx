@@ -2,10 +2,15 @@ import React from 'react'
 import Typography from '@material-ui/core/Typography'
 import { useTranslation } from 'react-i18next'
 
-export const Text = props => {
+interface TextProps {
+  children: string
+  [x: string]: any
+}
+
+export const Text = ({ children }: TextProps) => {
   const { t } = useTranslation()
 
-  return <React.Fragment>{t(props.path || props.children)}</React.Fragment>
+  return <React.Fragment>{t(children)}</React.Fragment>
 }
 
 export const H1 = build('h1')
@@ -18,8 +23,8 @@ export const P = build('p', 'body1')
 export const Span = build('span', 'body1')
 export const Small = build('small', 'body2')
 
-function build(component, variant) {
-  return props => {
+function build(component: any, variant?: any) {
+  return (props: TextProps) => {
     const { t } = useTranslation()
 
     return (

@@ -2,16 +2,14 @@ import createAuth0Client from '@auth0/auth0-spa-js'
 
 // ref: https://auth0.com/docs/libraries/auth0-spa-js
 let auth0Client
-
 async function initClient() {
   try {
     if (!auth0Client) {
       // WARNING: createAuth0Client seems to fail silently, doesn't throw error
       auth0Client = await createAuth0Client({
-        domain: process.env.REACT_APP_AUTH_DOMAIN,
-        client_id: process.env.REACT_APP_AUTH_CLIENT_ID,
+        domain: process.env.REACT_APP_AUTH0_DOMAIN,
+        client_id: process.env.REACT_APP_AUTH0_CLIENT_ID,
         redirect_uri: process.env.REACT_APP_HOST + '/auth/callback',
-        // onRedirectCallback: onRedirectCallback,
       })
     }
 

@@ -4,7 +4,7 @@ import { useLocation } from 'react-router-dom'
 
 import Centered from '../components/layout/Centered'
 import { Text } from '../components/Text'
-import AppNavbar from '../components/layout/AppNavbar'
+import AppNavbar from '../components/nav/AppNavbar'
 
 function Dashboard() {
   const location = useLocation()

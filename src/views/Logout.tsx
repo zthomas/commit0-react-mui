@@ -1,6 +1,5 @@
 import { useEffect } from 'react'
-// import router from '../utils/router'
-// import { logger, auth} from '../services'
+// import { auth} from '../services'
 
 // const redirect = () => {
 //   router.push('/')

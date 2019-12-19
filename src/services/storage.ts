@@ -8,7 +8,8 @@ let storage
 try {
   let fail
   let uid = new Date().toString()
-  ;(storage = window.localStorage).setItem('uid', uid)
+  storage = window.localStorage
+  storage.setItem('uid', uid)
   fail = storage.getItem('uid') !== uid
   storage.removeItem('uid')
   fail && (storage = false)
@@ -16,20 +17,24 @@ try {
   console.error('localstorage not supported')
 }
 
+interface Storage {
+  [x: string]: any
+}
+
 /**
  * Shim localstorage to fallback to in memory storage when storage is disabled
  */
 const createMemoryStorage = () => {
-  const memoryStorage = {}
+  const memoryStorage: Storage = {}
   return {
-    getItem: function(key) {
+    getItem: function(key: string): object | null {
       if (key === undefined) return memoryStorage
       else return memoryStorage[key]
     },
-    setItem: function(key, value) {
+    setItem: function(key: string, value: any) {
       memoryStorage[key] = value
     },
-    removeItem: function(key) {
+    removeItem: function(key: string) {
       delete memoryStorage[key]
     },
   }
@@ -40,23 +45,24 @@ const createMemoryStorage = () => {
  */
 function shimLocalStorage() {
   return {
-    getItem: function(key) {
-      let value = localStorage.getItem(key)
-      if (value !== undefined) {
+    getItem: function(key: string): object | undefined {
+      let strValue = localStorage.getItem(key) || ''
+      let value
+      if (strValue) {
         try {
-          value = JSON.parse(value)
+          value = JSON.parse(strValue)
         } catch (e) {}
       }
       return value
     },
-    setItem: function(key, value) {
+    setItem: function(key: string, value: any) {
       if (value !== undefined && value !== null) {
         localStorage.setItem(key, JSON.stringify(value))
       } else {
         localStorage.removeItem(key)
       }
     },
-    removeItem: function(key) {
+    removeItem: function(key: string) {
       localStorage.removeItem(key)
     },
   }
@@ -64,7 +70,7 @@ function shimLocalStorage() {
 
 let localstore = storage ? shimLocalStorage() : createMemoryStorage()
 
-module.exports = {
+export default {
   getItem: localstore.getItem,
   setItem: localstore.setItem,
   removeItem: localstore.removeItem,

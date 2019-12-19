@@ -33,7 +33,9 @@ We are using a hybrid approach to styling. The preferred system is CSS modules f
 - using some global styles for reset css and libraries like animate.css
 
 ## Typescript
+
 We are primarily using typescript to better handle type errors, and documentation and IDE assistance. We do not have to strictly type part of the codebase. Focus on defining types for the core logic of the application first.
+
 - [documentation](https://www.typescriptlang.org/docs/home.html)
 - [Typescript deep dive and tips](https://basarat.gitbooks.io/typescript/docs/types/type-system.html)
 - [popular repos](https://www.gitlogs.com/most_popular?language=TypeScript&topic=)
@@ -42,7 +44,6 @@ We are primarily using typescript to better handle type errors, and documentatio
 ## Documentation
 
 - use http://documentation.js.org/ it supports Flow syntax
-
 
 ## Tools:
 

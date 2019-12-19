@@ -1,16 +1,28 @@
 import React from 'react'
 import Tabs from '@material-ui/core/Tabs/Tabs'
 import Tab from '@material-ui/core/Tab/Tab'
-import PropTypes from 'prop-types'
-import { withStyles } from '@material-ui/core/styles'
+import { makeStyles } from '@material-ui/styles'
+import { useHistory } from 'react-router-dom'
 
 import { Text } from '../Text'
 import Navbar from './Navbar'
-import { router } from '../../utils'
 
-const AppNavbar = ({ pathname = '', classes }) => {
+const useStyles = makeStyles((theme: any) => ({
+  navbar: {
+    borderBottom: `1px solid ${theme.palette.divider}`,
+  },
+}))
+
+interface AppNavbarProps {
+  pathname: string
+}
+
+export default function AppNavbar({ pathname = '' }: AppNavbarProps) {
+  const classes = useStyles()
+  const history = useHistory()
   const tab = (pathname.split('/')[2] || '').toLowerCase()
-  const _handleTab = (e, tab) => router.push(`/app/${tab}`)
+  const _handleTab = (e: React.ChangeEvent<{}>, tab: string) =>
+    history.push(`/app/${tab}`)
 
   return (
     <Navbar className={classes.navbar}>
@@ -25,15 +37,3 @@ const AppNavbar = ({ pathname = '', classes }) => {
     </Navbar>
   )
 }
-
-AppNavbar.propTypes = {
-  pathname: PropTypes.string,
-}
-
-const styles = theme => ({
-  navbar: {
-    borderBottom: `1px solid ${theme.palette.divider}`,
-  },
-})
-
-export default withStyles(styles)(AppNavbar)

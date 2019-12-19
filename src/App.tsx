@@ -2,7 +2,7 @@ import React from 'react'
 import { Switch, Route } from 'react-router-dom'
 import { ApolloProvider } from '@apollo/react-hooks'
 
-import { apollo, history } from './services'
+import { apollo } from './services'
 
 import Dashboard from './views/Dashboard'
 
@@ -16,7 +16,7 @@ export default function App() {
 
   return (
     <ApolloProvider client={apollo}>
-      <Switch history={history}>
+      <Switch>
         <Route path="/app" component={SessionLoader}>
           <Route path="" exact component={Dashboard} />
         </Route>

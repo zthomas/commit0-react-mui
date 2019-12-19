@@ -4,8 +4,8 @@ import {
   CognitoUser,
   AuthenticationDetails,
 } from 'amazon-cognito-identity-js'
-// ref: https://github.com/aws-amplify/amplify-js/tree/master/packages/amazon-cognito-identity-js
 
+// ref: https://github.com/aws-amplify/amplify-js/tree/master/packages/amazon-cognito-identity-js
 const poolData = {
   UserPoolId: process.env.REACT_APP_COGNITO_POOL_ID,
   ClientId: process.env.REACT_APP_COGNITO_CLIENT_ID,
@@ -79,7 +79,7 @@ export function getToken() {
         if (err) {
           reject(err)
         } else {
-          // note: both access and id tokens can be used to authenticate
+          // both access and id tokens can be used to authenticate
           // https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-using-tokens-with-identity-providers.html
           // ex. session.getAccessToken().getJwtToken()
           resolve({

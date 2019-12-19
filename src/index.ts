@@ -1,8 +1,9 @@
 import './utils/bootstrap'
 import './services/i18n'
+import './styles/animate.css'
+import './styles/reset.css'
 import React from 'react'
 import { hydrate, render } from 'react-dom'
-import './styles/animate.css'
 import Routes from './Routes'
 import * as serviceWorker from './serviceWorker'
 

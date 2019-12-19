@@ -19,7 +19,6 @@
     "graphql": "^14.5.8",
     "history": "^4.7.2",
     "i18next": "^19.0.2",
-    "lodash.pickby": "^4.6.0",
     "prop-types": "^15.7.0",
     "qs": "^6.6.0",
     "react": "^16.12.0",
@@ -40,7 +39,7 @@
     "storybook": "start-storybook",
     "storybook-build": "build-storybook -c .storybook -o .out",
     "analyze": "npm run build; npx source-map-explorer build/static/js/*.js",
-    "index": "create-index ./src/constants ./src/models ./src/services ./src/utils ./src/graphql"
+    "index": "create-index ./src/constants ./src/models ./src/services ./src/graphql"
   },
   "eslintConfig": {
     "extends": "react-app"
