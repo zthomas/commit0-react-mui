@@ -5,7 +5,7 @@ icon: ''
 thumbnail: ''
 
 template:
-  extension: '.tmplt'
+  strictMode: true
   delimiters:
     - '<%'
     - '%>'
