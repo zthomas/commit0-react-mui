@@ -9,4 +9,4 @@ template:
   delimiters:
     - '<%'
     - '%>'
-  output: 'tmp/web-app'
+  output: 'web-app'
